@@ -5,12 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hello World - chrisgou博客</title>
+    <title>基于hexo搭建我的博客 - chrisgou博客</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="chrisgou 博客 hexo 前端 全栈 vue node,"> 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pr,"> 
+    <meta name="description" content="
+ 博客选型
+ 搭建步骤
+ 安装node
+ 安装git
+ 建立github博客仓库
+ 注册github.io静态站点
+ 本地初始化博客项目
+ 博客项目替换官方主题
+ 博客部署到github.io
+
+,"> 
     <meta name="author" content="Chrisgou"> 
     <link rel="alternative" href="atom.xml" title="chrisgou博客" type="application/atom+xml"> 
     <link rel="icon" href="/blog/img/favicon.png"> 
@@ -36,7 +47,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url=""></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">Hello World</h3>
+    <h3 class="subtitle">基于hexo搭建我的博客</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -54,27 +65,32 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">基于hexo搭建我的博客</h1>
         <div class="stuff">
-            <span>六月 23, 2019</span>
+            <span>六月 25, 2019</span>
             
 
         </div>
         <div class="content markdown">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <ul>
+<li><a href="#博客选型"> 博客选型</a></li>
+<li><a href="#搭建步骤"> 搭建步骤</a><ul>
+<li><a href="#安装node"> 安装node</a></li>
+<li><a href="#安装git"> 安装git</a></li>
+<li><a href="#建立github博客仓库"> 建立github博客仓库</a></li>
+<li><a href="#注册githubio静态站点"> 注册github.io静态站点</a></li>
+<li><a href="#本地初始化博客项目"> 本地初始化博客项目</a></li>
+<li><a href="#博客项目替换官方主题"> 博客项目替换官方主题</a></li>
+<li><a href="#博客部署到githubio"> 博客部署到github.io</a></li>
+</ul>
+</li>
+<li><a href="#额外技巧"> 额外技巧</a><ul>
+<li><a href="#vscode-markdown插件"> vscode markdown插件</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>作为一个快要5年的码农，很久之前就想要搭建这样一个自己的博客了。然而人总是喜欢待在舒适圈，渐渐的也就忘记了当初发下的狠誓和四处碰壁的窘境。下决心很容易，然而迈出第一步却异常艰难，当你迈出这一步，你就一直在路上，而不是永远停留在原地。</p>
+<h4 id="博客选型"><a href="#博客选型" class="headerlink" title="博客选型"></a>博客选型</h4><h4 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h4><h5 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h5><h5 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h5><h5 id="建立github博客仓库"><a href="#建立github博客仓库" class="headerlink" title="建立github博客仓库"></a>建立github博客仓库</h5><h5 id="注册github-io静态站点"><a href="#注册github-io静态站点" class="headerlink" title="注册github.io静态站点"></a>注册github.io静态站点</h5><h5 id="本地初始化博客项目"><a href="#本地初始化博客项目" class="headerlink" title="本地初始化博客项目"></a>本地初始化博客项目</h5><h5 id="博客项目替换官方主题"><a href="#博客项目替换官方主题" class="headerlink" title="博客项目替换官方主题"></a>博客项目替换官方主题</h5><h5 id="博客部署到github-io"><a href="#博客部署到github-io" class="headerlink" title="博客部署到github.io"></a>博客部署到github.io</h5><h4 id="额外技巧"><a href="#额外技巧" class="headerlink" title="额外技巧"></a>额外技巧</h4><h5 id="vscode-markdown插件"><a href="#vscode-markdown插件" class="headerlink" title="vscode markdown插件"></a>vscode markdown插件</h5>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
